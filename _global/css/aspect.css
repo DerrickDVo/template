@@ -1,0 +1,340 @@
+@import "global.css";
+@import "board_front/special-rules.css";
+@import "board_front/innate-power.css";
+@import "board_front/growth-options.css";
+@import "board_front/icon.css";
+
+@font-face {
+  font-family: JosefinSans-Regular;
+  src: url(../fonts/josefin-sans/JosefinSans-Regular.ttf);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0px;
+  margin: 0px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 14px;
+  font-variant-ligatures: none;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+}
+
+body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+aspect {
+  overflow: hidden;
+  width: 786px;
+  height: 567px;
+  padding: 27px 25px 23px 27px;
+  border-radius: 22px;
+  background-image: url("../images/aspect.png");
+  background-size: 100% 100%;
+  background-position: top left;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+aspect.profile {
+  width: 567px;
+  height: 786px;
+  padding: 19px 16px 24px 19px;
+  background-image: url("../images/aspect-profile.png");
+}
+
+aspect.round-border {
+  border-radius: 22px;
+}
+
+aspect aspect-name {
+  font-size: 34px;
+  font-family: "Name Headings";
+  text-transform: uppercase;
+  color: white;
+  padding-bottom: 8px;
+  padding-top: 0px;
+  text-align: center;
+  white-space: normal;
+  letter-spacing: 1px;
+}
+aspect aspect-name.no-subtext {
+  padding-bottom: 28px;
+}
+aspect aspect-name.has-complexity,
+aspect aspect-subtext.has-complexity {
+  padding-right: 107px;
+}
+
+aspect.profile aspect-name.has-complexity,
+aspect.profile aspect-subtext.has-complexity {
+  padding-right: 109px;
+}
+
+aspect.profile aspect-name.has-complexity,
+aspect.profile aspect-subtext.has-complexity {
+  /* padding-right: 91px;
+  padding-left: 28px; */
+}
+
+aspect complexity {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 122px;
+  height: 87px;
+  top: 33px;
+  position: absolute;
+  right: 17px;
+  display: flex;
+  filter: drop-shadow(2px 2px 5px);
+}
+
+aspect.profile complexity {
+  top: 24px;
+  right: 10px;
+}
+
+aspect-subtext icon {
+  filter: invert(1);
+}
+
+complexity.up {
+  background-image: url(../images/board/NewIcons/Complexity_Up.png);
+}
+complexity.equal {
+  background-image: url(../images/board/NewIcons/Complexity_Equal.png);
+}
+complexity.down {
+  background-image: url(../images/board/NewIcons/Complexity_Down.png);
+}
+
+aspect aspect-subtext {
+  padding-top: 7px;
+  padding-left: 26px;
+  padding-right: 22px;
+  font-size: 20px;
+  font-family: JosefinSans-Regular;
+  color: white;
+
+  width: 782px;
+  margin-left: -25px;
+  margin-right: 19px;
+
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: normal;
+  flex-shrink: 0;
+
+  background-image: url(../images/aspect-subtitle.png);
+  background-size: 100% 100%;
+  background-position: top left;
+  background-repeat: no-repeat;
+
+  min-height: 20px;
+}
+
+aspect.profile aspect-subtext {
+  width: 567px;
+  margin-left: -19px;
+  padding-top: 3px;
+}
+
+aspect aspect-subtext.has-complexity {
+  padding-right: 133px;
+}
+
+aspect.profile aspect-subtext.has-complexity {
+  padding-left: 22px;
+  padding-right: 131px;
+}
+
+aspect-container {
+  padding: 18px 10px 10px 15px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* aspect-container innate-power {
+  width: 100%;
+} */
+
+/* aspect innate-power description-container {
+  width: 100%;
+} */
+
+aspect innate-power level,
+aspect innate-power note,
+aspect innate-power description-container,
+aspect innate-power div.description {
+  width: 618px;
+}
+
+aspect.profile innate-power level,
+aspect.profile innate-power note,
+aspect.profile innate-power description-container,
+aspect.profile innate-power div.description {
+  width: 463px;
+}
+
+aspect-container innate-power:only-child level {
+  width: 100% !important;
+}
+
+aspect-container innate-power:only-child note {
+  width: 100% !important;
+}
+
+aspect-container level .description {
+  /* padding-top: 13px; */
+}
+
+aspect-back {
+  width: 786px;
+  height: 567px;
+  border-radius: 22px;
+  display: flex;
+  position: relative;
+}
+
+aspect-overlay {
+  width: 786px;
+  height: 567px;
+  display: flex;
+  border-radius: 22px;
+  position: relative;
+
+  background-image: url("../images/aspect-back.png");
+  background-size: cover;
+  background-position: top left;
+  background-repeat: no-repeat;
+}
+
+aspect-back .overlay {
+  content: url("../../_global/images/aspect-back.png");
+  border-radius: 22px;
+}
+
+aspect-back img {
+  position: absolute;
+  width: 786px;
+  height: 567px;
+  left: 0px;
+  top: 0px;
+  border-radius: 22px;
+}
+
+.aspect-back-title {
+  position: absolute;
+  left: 35px;
+  top: 34px;
+  width: 332px;
+  font-size: 35px;
+  font-family: "Name Headings";
+  color: white;
+  text-align: center;
+}
+
+.aspect-back-name {
+  position: absolute;
+  top: 77px;
+  left: 35px;
+  width: 332px;
+  font-size: 26px;
+  font-family: "Name Headings";
+  text-transform: uppercase;
+  color: black;
+  text-align: center;
+}
+
+icon.or {
+  background-image: url(../images/or.PNG);
+  background-size: 45%;
+  mix-blend-mode: multiply;
+  display: block;
+  height: 25px;
+  width: 300px;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+aspect innate-power {
+  /* scale: 0.9;
+  transform-origin: left top; */
+  margin-left: 0px;
+}
+
+/* aspect innate-power info-container, aspect innate-power description-container{
+  scale: 0.9;
+  transform-origin: left top;
+} */
+
+aspect special-rule {
+  /* font-size: 15.5pt; */
+  line-height: 26px;
+  padding-bottom: 21px;
+  white-space: pre-line;
+}
+
+aspect special-rules-subtitle {
+  font-size: 16pt;
+  padding-top: 0px;
+}
+
+aspect innate-power-title {
+  font-size: 16pt;
+}
+
+aspect growth-cell {
+  margin-right: 10px;
+  line-height: normal;
+  white-space: normal;
+}
+
+aspect growth-group icon.sun {
+  background-image: url("../images/board/Sun.png");
+}
+aspect growth-group icon.moon {
+  background-image: url("../images/board/Moon.png");
+}
+aspect growth-group icon.fire {
+  background-image: url("../images/board/Fire.png");
+}
+aspect growth-group icon.air {
+  background-image: url("../images/board/Air.png");
+}
+aspect growth-group icon.plant {
+  background-image: url("../images/board/Plant.png");
+}
+aspect growth-group icon.water {
+  background-image: url("../images/board/Water.png");
+}
+aspect growth-group icon.earth {
+  background-image: url("../images/board/Earth.png");
+}
+aspect growth-group icon.animal {
+  background-image: url("../images/board/Animal.png");
+}
+aspect growth-group icon.star {
+  background-image: url("../images/board/NewIcons/Element Star.png");
+}
+aspect growth-group icon.any {
+  background-image: url("../images/board/Any.png");
+}

@@ -1,0 +1,201 @@
+html,
+body {
+  padding: 0px;
+  margin: 0px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 14px;
+  font-variant-ligatures: none;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  background-color: transparent;
+}
+
+bullet {
+  margin-left: 30px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  width: 1766px;
+  height: 1177px;
+}
+
+board {
+  background-image: url("../../images/board/Frame.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 15.1px;
+  display: flex;
+  padding-left: 16px;
+  padding-top: 17.75px;
+  padding-bottom: 15px;
+  justify-content: end;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+spirit-name:hover {
+  text-shadow: -2px 2px 0 #ffffff, 2px 2px 0 #ffffff, 2px -2px 0 #ffffff, -2px -2px 0 #ffffff;
+  color: #000;
+  cursor: pointer;
+}
+
+board.round-border {
+  border-radius: 15.1px;
+}
+
+spirit-name {
+  display: flex;
+  align-items: center;
+  margin-left: 0px;
+  height: 100px;
+  width: 666.25px;
+  font-family: "Name Headings";
+  text-transform: uppercase;
+  color: white;
+  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+  vertical-align: middle;
+  text-align: left;
+  z-index: 2;
+  white-space: normal;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: left center;
+  text-indent: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: -50px;
+  margin-top: -50px;
+
+  letter-spacing: 3px;
+  word-spacing: -10px;
+  font-size: 45px;
+}
+
+artist-name {
+  position: absolute;
+  left: 22px;
+  top: 1163px;
+  height: 0px;
+  width: 666.25px;
+  font-size: 10px;
+  font-family: "Lato SemiBold";
+  color: #d1c5a6;
+  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+  text-align: left;
+  z-index: 1;
+  display: none;
+  white-space: normal;
+}
+
+.spirit-border {
+  margin-left: -15px;
+  margin-right: -8px;
+  margin-top: -50px;
+  margin-bottom: -2px;
+  height: 100px;
+  z-index: 1;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 705px 100%;
+}
+
+.spirit-image {
+  margin-left: 0.5px;
+  margin-bottom: -32.75px;
+  width: 667.5px;
+  z-index: -1;
+  flex-grow: 1;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+#single-line {
+  padding-top: 12px;
+  padding-bottom: 4px;
+}
+
+.note {
+  font-family: "JosefinSans-Regular";
+  font-size: 18pt;
+}
+
+range {
+  width: 50px;
+  margin-top: -10px;
+}
+
+range-plus-1 {
+  background-image: url("../../images/board/range_plus_1.png");
+}
+range-plus-2 {
+  background-image: url("../../images/board/range_plus_2.png");
+}
+range-plus-3 {
+  background-image: url("../../images/board/range_plus_3.png");
+}
+range-plus-4 {
+  background-image: url("../../images/board/range_plus_4.png");
+}
+
+range-plus-1,
+range-plus-2,
+range-plus-3,
+range-plus-4 {
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  margin-bottom: -13px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+none {
+  display: block;
+  height: 3px;
+}
+
+section-title {
+  display: block;
+  font-family: "Name Headings";
+  text-transform: uppercase;
+  font-size: 25pt;
+  padding-top: 10px;
+  line-height: 40px;
+  pointer-events: none;
+}
+
+section-title:hover {
+  text-shadow: -1px 1px 0 #fff, 1px 1px 0 #fff, 1px -1px 0 #fff, -1px -1px 0 #fff;
+  cursor: pointer;
+}
+
+right {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: 660px;
+  bottom: 15px;
+  top: 18px;
+  width: 1090px;
+  overflow: hidden;
+}

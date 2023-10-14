@@ -1,0 +1,1691 @@
+growth {
+  background-image: url("../../images/board/Growth_Without_Text.png");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: cover;
+  background-color: transparent;
+  background-clip: border-box;
+  display: block;
+  position: relative;
+  z-index: 3;
+}
+
+growth:hover section-title {
+  text-shadow: -1px 1px 0 #fff, 1px 1px 0 #fff, 1px -1px 0 #fff, -1px -1px 0 #fff;
+}
+growth:hover {
+  cursor: pointer;
+}
+
+growth section-title {
+  margin-left: 47px;
+  margin-top: -12px;
+}
+
+sub-growth {
+  display: inline-flex;
+}
+
+growth sub-section-title {
+  margin-top: -2px;
+  position: absolute;
+  display: flex;
+  z-index: 0;
+  font-family: "JosefinSans";
+  font-weight: bold;
+  font-style: italic;
+  font-size: 17pt;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  word-spacing: 1px;
+}
+
+growth special-section-title {
+  position: absolute;
+  font-family: "JosefinSans";
+  font-size: 17pt;
+  font-weight: bold;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  word-spacing: 1px;
+  z-index: 0;
+  transform: translateX(-50%);
+  left: 50%;
+  top: -46px;
+}
+
+/* growth special-section-title.title-left {
+  position: unset;
+  display: inline-block;
+  width: 215px;
+  transform: unset;
+  margin-top: 20px;
+  padding-right:5px;
+} */
+
+growth-table.has-special-title {
+  padding-top: 28px;
+}
+
+growth-table.has-special-title.title-left {
+  padding-top: 10px;
+}
+
+growth-table.has-special-title.title-left special-section-title {
+  position: unset;
+  display: inline-block;
+  width: 215px;
+  transform: unset;
+  margin-top: 30px;
+  padding-right: 5px;
+}
+
+growth .tint {
+  width: 100%;
+  opacity: 0.2;
+  position: absolute;
+  z-index: -1;
+  height: 120%;
+  top: -20%;
+  left: 3px;
+}
+
+growth .start-tint {
+  border-radius: 8px 0px 0px 8px;
+}
+
+growth .end-tint {
+  border-radius: 0px 8px 8px 0px;
+}
+
+growth .solo-tint {
+  border-radius: 8px;
+}
+
+growth sub-section-title > span {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+growth sub-section-line {
+  background-image: url("../../images/board/growth_underline.png");
+  height: 5px;
+  width: 100%;
+  background-size: 100% 100%;
+  flex-shrink: 99;
+  background-repeat: no-repeat;
+  margin-bottom: auto;
+  margin-top: auto;
+  margin-left: 8px;
+  margin-right: 8px;
+  z-index: 1;
+}
+
+growth-table {
+  display: inline-flex;
+  width: 1090px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 0px;
+  justify-content: flex-start;
+  padding-left: 5px;
+  padding-right: 5px;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+growth-table.two-table-top {
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+growth-table.two-table-bottom {
+  justify-content: flex-start;
+}
+
+sub-section-title + growth-table {
+  margin-top: 40px;
+}
+
+growth-group {
+  display: inline-flex;
+  position: relative;
+}
+
+growth-border {
+  background-image: url("../../images/board/Growthborder.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 15px;
+  height: 125px;
+  margin-top: -8px;
+  margin-right: 0px;
+  margin-left: 0px;
+  display: inline;
+  margin-bottom: -10px;
+  min-width: 15px;
+}
+
+growth-border[double] {
+  background-image: url("../../images/board/Growthborder_double.png");
+}
+
+growth-row-line {
+  background-image: url(../../images/board/growth_underline.png);
+  height: 5px;
+  width: 133px;
+  display: block;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  margin-left: 21px;
+  margin-right: 8px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+growth-cell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+growth-cell-double {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  font-family: "Lato SemiBold";
+  font-size: 14pt;
+  font-style: italic;
+  text-align: center;
+}
+
+growth-cell icon {
+  margin-bottom: 7px;
+  height: 90px;
+}
+
+growth-cell icon.presence {
+  margin-left: 8px;
+  width: 43px;
+  height: 26px;
+  margin-bottom: 0px;
+}
+
+growth-cell icon.reclaim-all,
+growth-cell icon.reclaim-one,
+growth-cell icon.reclaim-none,
+growth-cell icon.reclaim-custom,
+growth-cell icon.reclaim-half {
+  display: block;
+  height: 90px;
+  width: 90px;
+}
+
+growth-cell icon.empower-incarna {
+  width: 95px;
+  height: 110px;
+  margin-top: -26px;
+}
+
+growth-cell icon.incarna {
+  width: 80px;
+  height: 45px;
+  margin-bottom: 0px;
+  margin-top: -24px;
+}
+
+growth-cell icon.incarna.add-move {
+  margin-bottom: 10px;
+  height: 52px;
+}
+
+growth-cell add-move-upper {
+  margin-bottom: 35px;
+  width: 120px;
+}
+
+growth-cell add-move-lower {
+  display: inline-flex;
+  height: 33px;
+  flex-direction: row;
+  align-items: flex-end;
+  margin-bottom: 5px;
+}
+
+growth-cell add-token-upper {
+  margin-bottom: 25px;
+}
+
+growth-cell add-token-lower {
+  display: inline-flex;
+  height: 33px;
+  flex-direction: row;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+growth-cell icon.add-token {
+  margin-left: 5px;
+  width: 35px;
+  height: 35px;
+  margin-bottom: -8px;
+  margin-right: -2px;
+}
+
+add-move-upper icon.backslash {
+  width: 8px;
+  height: 25px;
+  margin-bottom: -3px;
+  margin-left: 2px;
+  margin-right: 5px;
+  margin-top: -1px;
+}
+
+add-move-upper icon.move-arrow {
+  width: 81px;
+  height: 25px;
+  margin-bottom: -3px;
+  margin-left: 2px;
+  margin-right: 5px;
+  margin-top: -1px;
+}
+
+growth-cell icon.with-your {
+  width: 35px;
+  height: 35px;
+  z-index: -1;
+  margin-bottom: 0px;
+  margin-left: -20px;
+}
+
+growth-cell icon.replace-with-incarna {
+  position: relative;
+  left: 40px;
+  bottom: -32px;
+}
+
+growth-cell icon.with-incarna {
+  margin-right: 35px;
+  margin-bottom: 24px;
+}
+
+growth-cell icon.reclaim-half {
+  width: 82px;
+}
+
+growth-cell icon.reclaim-element {
+  position: relative;
+  left: 28px;
+  top: -28px;
+  width: 36px;
+}
+
+growth-cell icon.discard-element {
+  position: relative;
+  left: 28px;
+  top: -28px;
+  width: 36px;
+}
+
+presence-node.growth {
+  margin-top: -39px;
+}
+
+plus-presence {
+  display: block;
+  line-height: 20px;
+  margin-bottom: 1px;
+}
+
+custom-presence plus-presence {
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
+custom-presence-or plus-presence {
+  display: inline-block;
+}
+
+custom-presence-no-range plus-presence {
+  display: inline-block;
+}
+
+/* Repeating Growth Options (Fractured Days) */
+repeat-growth {
+  background-image: url("../../images/board/NewIcons/Growth Multiply Blank.png");
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: -30px;
+  left: -12px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+repeat-growth value {
+  font-family: "Energy Font";
+  font-size: 18pt;
+  display: inline-block;
+  font-style: normal;
+  margin-top: 4px;
+  margin-left: 10px;
+  color: #52301e;
+}
+
+repeat-wrapper {
+  height: 90px;
+}
+
+/* Gaining Flat Energy */
+growth-energy {
+  background-image: url("../../images/board/AddEnergyBlank.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  display: block;
+  height: 100px;
+  width: 100px;
+  margin-top: -10px;
+}
+
+growth-energy value {
+  font-family: "Energy Font";
+  font-size: 24pt;
+  font-style: normal;
+  display: inline-block;
+  margin-top: 31px;
+  margin-left: 19px;
+}
+
+/* Complex add presence options */
+custom-presence-req {
+  font-size: 20pt;
+  font-weight: bold;
+  margin-top: -24px;
+  margin-bottom: 0px;
+  width: auto;
+  height: 115px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+custom-presence {
+  font-size: 20pt;
+  font-weight: bold;
+  font-style: normal;
+  display: flex;
+  width: auto;
+  height: 88px;
+  margin-bottom: 2px;
+  margin-top: 0px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+custom-presence-or {
+  display: block;
+  height: 40px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+custom-presence-or icon.backslash {
+  width: 8px;
+  height: 25px;
+  margin-bottom: -3px;
+  margin-left: 2px;
+  margin-right: 5px;
+  margin-top: -1px;
+}
+
+custom-presence-or icon {
+  margin-bottom: -5px;
+  width: 33px;
+  height: 34px;
+  margin-left: -4px;
+}
+
+custom-presence-no-range {
+  font-size: 20pt;
+  font-weight: bold;
+  display: block;
+  width: auto;
+  height: 40px;
+  margin-bottom: 0px;
+  margin-top: 52px;
+}
+
+custom-presence-no-range icon.range-any {
+  width: 0px;
+}
+
+custom-presence icon.range-0,
+custom-presence icon.range-1,
+custom-presence icon.range-2,
+custom-presence icon.range-3,
+custom-presence icon.range-4 {
+  margin-bottom: 10px;
+}
+
+range-growth {
+  background-image: url("../../images/board/range_arrow.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+  height: 50px;
+  width: 106px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  display: inline-block;
+}
+
+range-growth > value {
+  font-size: 40px;
+  font-family: "Antropos";
+  bottom: 8px;
+  left: 2px;
+  position: relative;
+  text-align: center;
+}
+
+move-growth {
+  background-image: url("../../images/board/move_arrow.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+  font-size: 40px;
+  line-height: 28px;
+  font-family: "Antropos";
+  text-align: center;
+  height: 62px;
+  width: 106px;
+  margin-top: 9px;
+  margin-bottom: 0px;
+  display: inline-block;
+}
+
+move-growth > textvalue {
+  font-size: 28px;
+  line-height: 28px;
+  font-family: "NAME HEADINGS";
+}
+
+growth-cell range {
+  background-image: url("../../images/board/range_arrow.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+  font-size: 40px;
+  line-height: 28px;
+  font-family: "Antropos";
+  height: 45px;
+  width: 106px;
+  margin-top: 42px;
+  margin-bottom: 4px;
+  display: inline-block;
+}
+
+range-growth-any {
+  background-image: none;
+  font-size: 0px;
+}
+
+custom-presence-req icon.range-0,
+custom-presence-req icon.range-1,
+custom-presence-req icon.range-2,
+custom-presence-req icon.range-3,
+custom-presence-req icon.range-4 {
+  margin-bottom: -5px;
+}
+
+custom-presence-req icon.dahan {
+  height: 37px;
+  width: 37px;
+  margin-top: 0px;
+  margin-bottom: -2px;
+}
+
+presence-req icon.presence {
+  display: inline-block;
+  height: 45px;
+  width: 45px;
+  margin-top: 7px;
+  margin-bottom: -5px;
+}
+
+presence-req icon {
+  height: 37px;
+  width: 37px;
+  margin-left: 3px;
+  margin-right: 3px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+presence-req icon.add-token {
+  height: 30px;
+  width: 30px;
+  margin-left: 3px;
+  margin-right: auto;
+  margin-top: -1px;
+  margin-bottom: 0px;
+}
+
+presence-req icon.wilds {
+  width: 45px;
+}
+
+presence-req icon.town,
+presence-req icon.disease {
+  height: 37px;
+  width: 27px;
+}
+
+presence-req icon.presence {
+  width: 35px;
+  height: 27px;
+  margin-top: 0px;
+}
+
+presence-req icon.blight {
+  width: 30px;
+}
+
+presence-req icon.invaders {
+  width: 70px;
+  height: 25px;
+  margin-top: 22px;
+}
+
+presence-req icon.terrain-single,
+presence-req icon.terrain-double {
+  height: 37px;
+  width: 37px;
+  margin-top: -1px;
+  margin-bottom: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+presence-req icon.terrain-double {
+  width: 80px;
+  height: 41px;
+  transform: translateY(0px) translateX(6px);
+}
+
+presence-req icon.ocean {
+  height: 46px;
+  width: 65px;
+  margin-top: -3px;
+  margin-left: -3px;
+}
+
+presence-req {
+  font-family: "Lato SemiBold";
+  font-size: 14pt;
+  line-height: 26px;
+  font-style: italic;
+  display: flex;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  flex-direction: row;
+  align-items: center;
+}
+
+display-custom {
+  display: inline-flex;
+  flex-direction: row;
+}
+
+growth-cell icon.make-fast {
+  margin-bottom: 7px;
+}
+
+growth-cell icon.reclaim-all {
+  margin-bottom: 7px;
+}
+
+growth-cell icon.reclaim-custom {
+  margin-bottom: 7px;
+}
+
+growth-cell icon.isolate {
+  width: 70px;
+  margin-bottom: 7px;
+}
+
+growth-cell icon.gain-power-card,
+growth-cell icon.forget-power-card,
+growth-cell icon.discard-cards,
+growth-cell icon.discard-2-cards,
+growth-cell icon.discard-card,
+growth-cell icon.discard-1-card,
+growth-cell icon.gain-card-play,
+growth-cell icon.gain-card-play-blank,
+growth-cell icon.days-never-were {
+  margin-bottom: 7px;
+  height: 90px;
+  width: 90px;
+}
+
+growth-cell icon.energy-per-play {
+  margin-bottom: 0px;
+  margin-top: -20px;
+  width: 100px;
+  height: 110px;
+}
+/* 
+growth-cell icon.destroyed-presence, growth-cell icon.destroy-presence {
+  margin-bottom: 7px;
+  height:90px;
+  width:100px;
+} */
+
+growth-cell icon.reclaim-one {
+  margin-bottom: 7px;
+}
+
+growth-cell icon.reclaim-none {
+  margin-bottom: 7px;
+}
+
+growth-cell icon.ignore-range {
+  margin-bottom: 10px;
+  margin-top: -10px;
+  height: 90px;
+  width: 100px;
+}
+
+growth-cell icon.gain-1-time,
+growth-cell icon.gain-2-time {
+  height: 100px;
+  width: 100px;
+  margin-top: -17px;
+}
+
+growth-cell icon.make-fast {
+  margin-bottom: 3px;
+  width: 90px;
+}
+
+custom-icon {
+  font-size: 20pt;
+  font-weight: bold;
+  display: flex;
+  margin-top: -31px;
+  width: auto;
+  height: 122px;
+  margin-bottom: 0px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+custom-icon .token {
+  width: 40px;
+  height: 35px;
+  margin-bottom: -3px;
+  margin-left: 0px;
+}
+
+custom-icon .destroyed-presence {
+  width: 55px;
+  height: 34px;
+  margin-bottom: -3px;
+  margin-left: 1px;
+}
+
+icon.gain-card-modifier {
+  width: 50px;
+  position: relative;
+  left: -29px;
+  top: -34px;
+}
+
+icon.gain-card-modifier.sun {
+  background-image: url(../../images/board/element_simple_sun.png);
+}
+icon.gain-card-modifier.earth {
+  background-image: url(../../images/board/element_simple_earth.png);
+}
+icon.gain-card-modifier.plant {
+  background-image: url(../../images/board/element_simple_plant.png);
+}
+icon.gain-card-modifier.fire {
+  background-image: url(../../images/board/element_simple_fire.png);
+}
+icon.gain-card-modifier.air {
+  background-image: url(../../images/board/element_simple_air.png);
+}
+icon.gain-card-modifier.moon {
+  background-image: url(../../images/board/element_simple_moon.png);
+}
+icon.gain-card-modifier.animal {
+  background-image: url(../../images/board/element_simple_animal.png);
+}
+icon.gain-card-modifier.water {
+  background-image: url(../../images/board/element_simple_water.png);
+}
+icon.gain-card-modifier.any {
+  background-image: url(../../images/board/element_simple_any.png);
+}
+
+icon.gain-card-modifier.minor {
+  width: 42px;
+}
+
+icon.gain-card-second-modifier {
+  width: 45px;
+  position: relative;
+  right: -48px;
+  top: -127px;
+  display: block;
+}
+
+token-wrap {
+  display: inline-flex;
+  flex-wrap: wrap;
+  vertical-align: bottom;
+  align-content: flex-end;
+  padding-bottom: 2px;
+  justify-content: center;
+}
+
+replace-wrap {
+  display: inline-flex;
+  flex-wrap: wrap;
+  vertical-align: bottom;
+  align-content: flex-end;
+  height: 69px;
+  padding-bottom: 2px;
+  justify-content: center;
+  font-size: 20pt;
+  font-weight: bold;
+}
+
+icon.replace-with,
+icon.replace-this,
+icon.replace-this-no-range,
+icon.replace-with.presence,
+icon.replace-this.presence,
+icon.replace-this-no-range.presence {
+  height: 40px;
+  width: 40px;
+  margin-bottom: 0px;
+  margin-top: -5px;
+  top: 10px;
+}
+
+icon.replace-with.presence,
+icon.replace-this.presence,
+icon.replace-this-no-range.presence {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+icon.replace-with {
+  position: inherit;
+}
+
+icon.replace-this {
+  position: absolute;
+  transform: translate(6px, -33px);
+}
+
+icon.replace-this-no-range {
+  position: absolute;
+  transform: translate(6px, 7px);
+}
+
+custom-icon icon.isolate {
+  width: 50px;
+  margin-bottom: -10px;
+}
+
+custom-icon2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+custom-icon2 icon.move-range-1,
+custom-icon2 icon.move-range-2,
+custom-icon2 icon.move-range-3,
+custom-icon2 icon.move-range-4 {
+  margin-top: 8px;
+  margin-left: 0px;
+}
+
+growth-text {
+  font-family: "Lato SemiBold";
+  font-size: 14pt;
+  font-style: italic;
+  margin-top: 0px;
+  text-align: center;
+  /* width: 105%; */
+  box-sizing: border-box;
+  letter-spacing: 1px;
+  line-height: 19px;
+  min-width: 50px;
+  max-height: 60px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+growth-text icon.explorer,
+growth-text icon.town,
+growth-text icon.city,
+growth-text icon.wilds,
+growth-text icon.disease,
+growth-text icon.strife,
+growth-text icon.beasts {
+  width: 24px;
+  height: 24px;
+  margin-bottom: -3px;
+  margin-left: -4px;
+  margin-right: -4px;
+}
+
+.plus-text {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 20pt;
+  font-weight: bold;
+  font-style: normal;
+}
+
+plus-text {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 20pt;
+  font-weight: bold;
+  font-style: normal;
+}
+
+plus-text::after {
+  content: "+";
+}
+
+.non-icon {
+  font-family: "Name Headings";
+  font-size: 20pt;
+  font-style: normal;
+  margin: auto;
+}
+
+.non-icon.small {
+  font-size: 16pt;
+  margin: auto 3px auto 3px;
+}
+
+growth-cell icon.gather-arrow {
+  margin-bottom: 7px;
+  background-image: url("../../images/board/half_arrow_gather.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  height: 70px;
+  height: 17px;
+  margin-left: 45px;
+  margin-top: -34px;
+}
+
+growth-cell icon.push-arrow {
+  margin-bottom: 7px;
+  background-image: url("../../images/board/half_arrow_push.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  height: 70px;
+  height: 17px;
+  margin-left: 45px;
+  margin-top: -34px;
+}
+
+growth-cell icon.push {
+  height: 62px;
+  width: 100px;
+}
+
+growth-cell icon.push > icon {
+  left: -15px;
+  top: 17px;
+}
+
+growth-cell icon.push-from > .from {
+  left: -20px;
+  top: 11px;
+  width: 35px;
+}
+
+growth-cell icon.push-from {
+  display: inline-block;
+  height: 62px;
+  width: 100px;
+  margin-bottom: 7px;
+}
+
+growth-cell icon.push-from > icon {
+  position: relative;
+  text-align: unset;
+  left: -10px;
+  top: 30px;
+  width: 30px;
+  height: 25px;
+  margin: 0px;
+  padding: 0px;
+}
+
+growth-cell icon.gather > icon {
+  left: 65px;
+  top: 17px;
+}
+
+growth-cell icon.gather-into > icon {
+  left: 79px;
+  top: 23px;
+}
+
+growth-cell icon.gather-into {
+  display: inline-block;
+  height: 62px;
+  width: 100px;
+  margin-right: 20px;
+  margin-bottom: 7px;
+}
+
+growth-cell icon.gather-into > icon {
+  position: relative;
+  text-align: unset;
+  left: 79px;
+  top: 23px;
+  width: 30px;
+  height: 25px;
+  margin: 0px;
+  padding: 0px;
+}
+
+growth-cell icon.gather-into > .into {
+  left: -30px;
+  top: 10px;
+  width: 35px;
+}
+
+growth-cell icon.gather-into > icon.explorer {
+  height: 35px;
+  margin-top: -10px;
+  margin-bottom: -6px;
+}
+
+growth-cost {
+  background-image: url("../../images/board/NewIcons/Energy Blank Small.png");
+  font-family: "Energy Font";
+  font-size: 16pt;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  height: 45px;
+  width: 45px;
+  top: -35px;
+  position: relative;
+  margin-right: 10px;
+  margin-left: -45px;
+  padding-top: 9px;
+  transform: translateX(100%);
+}
+
+growth-cost::after {
+  content: "Cost";
+  font-family: "Lato SemiBold";
+  font-size: 14pt;
+  font-style: italic;
+  position: absolute;
+  left: 3px;
+  top: 44px;
+}
+
+growth-cost.custom {
+  background-image: none;
+  font-size: 20pt;
+  top: -35px;
+  padding-top: 1px;
+  float: left;
+}
+
+growth-cost.custom > icon {
+  height: 45px;
+  width: 45px;
+}
+
+growth-cost.custom value {
+  text-shadow: -1.5px 1.5px 0 #fff, 1.5px 1.5px 0 #fff, 1.5px -1.5px 0 #fff, -1.5px -1.5px 0 #fff;
+  position: relative;
+  top: 4px;
+  left: -2px;
+}
+
+growth-cost.custom::after {
+  content: "Cost";
+  font-family: "Lato SemiBold";
+  font-size: 14pt;
+  font-style: italic;
+  position: absolute;
+  left: 3px;
+  top: 44px;
+}
+
+growth-cost.nonscaling {
+  top: -42px;
+  position: relative;
+  display: flex;
+}
+
+growth-cost.nonscaling::after {
+  content: none;
+}
+
+growth-cost.nonscaling > icon {
+  height: 45px;
+  width: 45px;
+}
+
+growth-cost-custom-nonscaling-description {
+  font-family: "Lato SemiBold";
+  font-size: 10.5pt;
+  font-style: italic;
+  width: 120px;
+  margin-top: -5px;
+  margin-left: 45px;
+  line-height: 12pt;
+  text-align: center;
+  position: absolute;
+}
+
+presence-special-req {
+  background-image: url("../../images/board/75px_presence.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  display: inline-block;
+  height: 25px;
+  width: 35px;
+  margin-bottom: -7px;
+}
+
+add-presence-req {
+  display: block;
+  font-weight: bold;
+  font-size: 18pt;
+}
+
+/* Deal Damage in Growth */
+growth-damage {
+  background-image: url("../../images/board/NewIcons/Damage Blank.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  font-size: 20pt;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  margin-top: -11px;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1px;
+  margin-right: -10px;
+}
+
+growth-damage value {
+  font-family: "Energy Font";
+  font-size: 22pt;
+  display: inline-block;
+  margin-top: 36px;
+  margin-left: 0px;
+  font-style: normal;
+  text-align: center;
+}
+
+growth icon.damage-1,
+growth icon.damage-2 {
+  height: 80px;
+  width: 80px;
+  margin-bottom: 17px;
+}
+
+card-play-num {
+  background-image: url("../../images/board/NewIcons/Cardplay Gain Blank.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 80px;
+  width: 80px;
+  display: block;
+  z-index: 1;
+  position: relative;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  margin-top: 0px;
+  margin-right: -4px;
+}
+
+card-play-num value {
+  font-family: "Energy Font";
+  font-size: 24pt;
+  font-style: normal;
+  display: inline-block;
+  margin-top: 32px;
+  margin-left: 0px;
+}
+
+growth-cell card-play {
+  background-image: url("../../images/board/card_play.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  height: 70px;
+  margin-left: 25px;
+  margin-top: -39px;
+}
+
+your-land {
+  background-image: url("../../images/board/NeutralBoard.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  height: 70px;
+  margin-top: 35px;
+  margin-left: 12px;
+  margin-bottom: -8px;
+}
+
+move {
+  display: inline-block;
+  height: 75px;
+  width: 75px;
+  margin-left: 13px;
+  text-align: center;
+}
+
+push {
+  background-image: url("../../images/board/half_arrow_push.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  height: 70px;
+  height: 17px;
+  margin-left: 45px;
+  margin-top: -34px;
+}
+
+gather {
+  background-image: url("../../images/board/half_arrow_gather.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  height: 70px;
+  height: 17px;
+  margin-left: 45px;
+  margin-top: -34px;
+}
+
+push-gather {
+  font-size: 20pt;
+  font-weight: bold;
+  display: block;
+  margin-top: 4px;
+  width: auto;
+  height: 110px;
+  margin-bottom: -22px;
+}
+
+push-gather icon.terrain-gather {
+  display: inline-block;
+  height: 62px;
+  width: 100px;
+  margin-right: 20px;
+  margin-bottom: 7px;
+  margin-top: 0px;
+  margin-left: 0px;
+}
+
+push-gather icon.terrain-push {
+  display: inline-block;
+  height: 62px;
+  width: 100px;
+  margin-right: 0px;
+  margin-bottom: 7px;
+  margin-top: 0px;
+  margin-left: 0px;
+}
+
+push-gather icon.terrain-gather > icon.into {
+  left: 58px;
+  top: -8px;
+  position: relative;
+  text-align: unset;
+  width: 30px;
+  height: 25px;
+  margin: 0px;
+  padding: 0px;
+}
+
+push-gather icon.terrain-push > icon.from {
+  left: -26px;
+  top: 13px;
+  position: relative;
+  text-align: unset;
+  width: 30px;
+  height: 25px;
+  margin: 0px;
+  padding: 0px;
+}
+
+push-gather icon.terrain-push.ocean > icon.from {
+  left: -8px;
+  top: -8px;
+}
+
+push-gather icon.terrain-gather > icon.gather-arrow {
+  left: 60px;
+  top: 17px;
+  position: relative;
+  text-align: unset;
+  width: 32px;
+  height: 25px;
+  margin: 0px;
+  padding: 0px;
+}
+
+push-gather icon.terrain-push > icon.push-arrow {
+  left: 47px;
+  top: 38px;
+  position: relative;
+  text-align: unset;
+  width: 40px;
+  height: 25px;
+  margin: 0px;
+  padding: 0px;
+}
+
+push-gather icon.terrain-push.ocean > icon.push-arrow {
+  left: 63px;
+  top: 17px;
+}
+
+push-gather-range-req {
+  font-size: 20pt;
+  font-weight: bold;
+  margin-top: -19px;
+  margin-bottom: 0px;
+  width: auto;
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Element Icons */
+growth-cell gain icon.fire,
+growth-cell gain icon.any,
+growth-cell gain icon.water,
+growth-cell gain icon.air,
+growth-cell gain icon.earth,
+growth-cell gain icon.animal,
+growth-cell gain icon.plant,
+growth-cell gain icon.sun,
+growth-cell gain icon.moon,
+growth-cell gain icon.star,
+growth-cell gain icon.markerminus,
+growth-cell gain icon.markerplus {
+  height: 60px;
+  width: 60px;
+  margin: -30px;
+}
+
+growth-cell gain icon.star {
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  height: 87px;
+  width: 87px;
+  margin-top: -3px;
+  margin-bottom: 7px;
+}
+
+/* Enables growth option - OR multiple different elements */
+growth-cell gain icon.orelement {
+  margin-right: 1px;
+  margin-left: 1px;
+  margin-top: -15px;
+  max-height: 60px;
+  min-width: 42px;
+  max-width: 60px;
+  flex: 4 1 0;
+}
+
+gain.or icon.backslash {
+  min-width: 8px;
+  z-index: 2;
+  margin-bottom: 13px;
+  flex: 1 1 0;
+  height: unset;
+  aspect-ratio: 3/10;
+  margin-left: -3px;
+  margin-right: -3px;
+}
+
+gain.or {
+  display: flex;
+  flex-direction: row;
+  height: 90px;
+  margin-top: 0px;
+  width: 140px;
+}
+
+growth-cell div.custom-scaling {
+  font-family: "Name Headings";
+  font-size: 28pt;
+  font-style: normal;
+}
+
+gain {
+  height: 90px;
+  width: 95px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Enables growth option - 2 of same element */
+icon-multi-element {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+icon-multi-element icon,
+icon-multi-element energy-icon,
+icon-multi-element card-icon {
+  display: inline-block;
+  position: relative;
+  margin: -30px;
+}
+
+icon-multi-element icon.star {
+  width: 80px;
+  margin-top: -10px;
+  margin-left: -5px;
+}
+
+/* Gaining Energy per Element/Icon */
+gain-per {
+  background-image: url("../../images/board/AddEnergyBlank.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 75px;
+  width: 75px;
+  display: block;
+  z-index: 1;
+  position: relative;
+  margin-left: -27px;
+  margin-bottom: 50px;
+  margin-top: -35px;
+}
+
+gain-per value {
+  font-family: "Energy Font";
+  font-size: 16pt;
+  font-style: normal;
+  display: inline-block;
+  margin-top: 25px;
+  margin-left: 11px;
+}
+
+gain-per-element icon {
+  height: 50px;
+  width: 50px;
+  z-index: 1;
+  position: relative;
+  margin-left: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+gain-per-element icon,
+gain-per-element icon.fire,
+gain-per-element icon.any,
+gain-per-element icon.water,
+gain-per-element icon.air,
+gain-per-element icon.earth,
+gain-per-element icon.animal,
+gain-per-element icon.plant,
+gain-per-element icon.sun,
+gain-per-element icon.moon,
+gain-per-element icon.sacred-site,
+gain-per-element icon.destroyed-presence,
+gain-per-element icon.explorer,
+gain-per-element icon.town,
+gain-per-element icon.city,
+gain-per-element icon.custom1,
+gain-per-element icon.custom2,
+gain-per-element icon.custom3 {
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  height: 60px;
+  width: 50px;
+  z-index: 0;
+}
+
+gain-per-element icon.sun {
+  background-image: url(../../images/board/element_simple_sun.png);
+}
+gain-per-element icon.earth {
+  background-image: url(../../images/board/element_simple_earth.png);
+}
+gain-per-element icon.plant {
+  background-image: url(../../images/board/element_simple_plant.png);
+}
+gain-per-element icon.fire {
+  background-image: url(../../images/board/element_simple_fire.png);
+}
+gain-per-element icon.air {
+  background-image: url(../../images/board/element_simple_air.png);
+}
+gain-per-element icon.moon {
+  background-image: url(../../images/board/element_simple_moon.png);
+}
+gain-per-element icon.animal {
+  background-image: url(../../images/board/element_simple_animal.png);
+}
+gain-per-element icon.water {
+  background-image: url(../../images/board/element_simple_water.png);
+}
+gain-per-element icon.any {
+  background-image: url(../../images/board/element_simple_any.png);
+}
+
+gain-per-element ring-icon {
+  background-image: url(../../images/board/CardPlayRing.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  height: 70px;
+  width: 70px;
+  z-index: 2;
+  margin-left: -47px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Totally Custom Growth Options (Icon, text, etc) */
+custom-growth-icon {
+  font-size: 20pt;
+  font-weight: bold;
+  margin-top: -10px;
+  margin-bottom: 0px;
+  width: auto;
+  height: 100px;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+custom-growth-icon icon.explorer {
+  width: 50px;
+  height: 70px;
+  margin-top: 0px;
+}
+
+icon.custom-growth-icon {
+  width: 80px;
+  height: 90px;
+  margin-top: 0px;
+  margin-bottom: 7px;
+  background-position: bottom;
+}
+
+custom-growth-icon > * {
+  width: 80px;
+  height: 90px;
+  margin-top: 0px;
+  margin-bottom: 7px;
+  background-position: bottom;
+}
+
+icon.custom-growth-icon.wide-growth {
+  width: 200px;
+}
+
+custom-growth-icon.wide-growth > * {
+  width: 200px;
+}
+
+/* custom-growth-icon.wide-growth {
+  height: 100px;
+} */
+
+/* Gaining Fear */
+growth-fear {
+  background-image: url("../../images/board/fear.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  display: block;
+  height: 110px;
+  width: 80px;
+  margin-top: -20px;
+}
+
+growth-fear value {
+  font-family: "Energy Font";
+  font-size: 20pt;
+  display: inline-block;
+  font-style: normal;
+  margin-top: 48px;
+  margin-left: 0px;
+}
+
+fear-per {
+  background-image: url("../../images/board/fear.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 75px;
+  width: 53px;
+  display: block;
+  z-index: 1;
+  position: relative;
+  margin-left: 0px;
+  margin-bottom: 50px;
+  margin-top: -35px;
+}
+
+fear-per value {
+  font-family: "Energy Font";
+  font-size: 14pt;
+  display: inline-block;
+  font-style: normal;
+  margin-top: 33px;
+  margin-left: 0px;
+}
+
+gain-per-fear ring-icon {
+  background-image: url("../../images/board/CardPlayRing.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  height: 70px;
+  width: 70px;
+  z-index: 2;
+  margin-left: -32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+gain-per-fear icon,
+gain-per-fear icon.fire,
+gain-per-fear icon.any,
+gain-per-fear icon.water,
+gain-per-fear icon.air,
+gain-per-fear icon.earth,
+gain-per-fear icon.animal,
+gain-per-fear icon.plant,
+gain-per-fear icon.sun,
+gain-per-fear icon.moon,
+gain-per-fear icon.sacred-site,
+gain-per-fear icon.destroyed-presence,
+gain-per-fear icon.explorer,
+gain-per-fear icon.town,
+gain-per-fear icon.city,
+gain-per-fear icon.custom1,
+gain-per-faer icon.custom2,
+gain-per-fear icon.custom3 {
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  height: 60px;
+  width: 60px;
+  z-index: 0;
+  margin-left: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+gain-per-fear icon.sun {
+  background-image: url(../../images/board/element_simple_sun.png);
+}
+gain-per-fear icon.earth {
+  background-image: url(../../images/board/element_simple_earth.png);
+}
+gain-per-fear icon.plant {
+  background-image: url(../../images/board/element_simple_plant.png);
+}
+gain-per-fear icon.fire {
+  background-image: url(../../images/board/element_simple_fire.png);
+}
+gain-per-fear icon.air {
+  background-image: url(../../images/board/element_simple_air.png);
+}
+gain-per-fear icon.moon {
+  background-image: url(../../images/board/element_simple_moon.png);
+}
+gain-per-fear icon.animal {
+  background-image: url(../../images/board/element_simple_animal.png);
+}
+gain-per-fear icon.water {
+  background-image: url(../../images/board/element_simple_water.png);
+}
