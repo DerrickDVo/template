@@ -32,21 +32,20 @@ function buildBuildCard(template) {
 
   const subevent1 = document.querySelector('subevent-1');
 
-
   const subevent2 = document.querySelector('subevent-2');
-
 
   const tokenEvent1 = document.querySelector('token-event-1');
 
   const tokenEvent2 = document.querySelector('token-event-2');
   
+  console.log("HI");
 
   html = `
-          <event-title>${eventName}</event-title>
+          <subevent-header class = "title" >${eventName}</subevent-header>
           `;
 
   html += `
-          <effect> ${eventLore} </effect>
+          <effect class = "title"> ${eventLore} </effect>
           `;
 
   html += parseSubevent(subevent1);
@@ -72,16 +71,19 @@ function parseSubevent (el) {
   let type = el.getAttribute("type");
   let html;
   if (type == "choice"){
-    html = `
-    <subevent-header> ${name} </subevent-header>
-    <effect> ${effect} </effect>
+    html = `<subevent>
+    <subevent-body class="choice">
+    <subevent-header class = "choice"> ${name} </subevent-header>
+    <effect> ${effect} </effect> </subevent-body>
+    </subevent>
     `
   } else{
-    console.log("health time");
-    html = `
-    <subevent-banner-healthy> <subevent-banner-text> Healthy Island </subevent-banner-text> </subevent-banner-healthy>
+    // Change to the line below
+    html = `<subevent>
+    <subevent-banner class="healthy"> <subevent-banner-text> Healthy Island </subevent-banner-text> </subevent-banner><subevent-body>
     <subevent-header> ${name} </subevent-header>
-    <effect> ${effect} </effect>
+    <effect> ${effect} </effect> </subevent-body>
+    </subevent>
     `
   }
 
@@ -99,13 +101,13 @@ function parseTokenEvent(el, isTopEvent){
 
   let html = `
 
-      <token-event-${tokens} style="bottom: ${bottomOffset};">
+      <token-event class="${tokens}" style="bottom: ${bottomOffset};">
 
-      <token-event-icon-${tokens}> </token-event-icon-${tokens}>
+      <token-event-icon class="${tokens}"> </token-event-icon class="${tokens}">
 
       <token-event-effect><span style="font-family: Name Headings; letter-spacing: 0px;">${name}</span> ${effect}</token-event-effect>
       
-      </token-event-${tokens}>
+      </token-event class="${tokens}">
       `
   ;
 
