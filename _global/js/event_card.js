@@ -48,9 +48,15 @@ function buildBuildCard(template) {
           <effect class = "title"> ${eventLore} </effect>
           `;
 
+  html += `<event-body>
+          `;
+
   html += parseSubevent(subevent1);
 
   html += parseSubevent(subevent2);
+
+  html += `</event-body>
+          `;
 
   html+= parseTokenEvent(tokenEvent1, true);
 
