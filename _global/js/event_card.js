@@ -26,6 +26,7 @@ function buildBuildCard(template) {
   template.parentNode.insertBefore(eventCard, templateEventCard.nextSibling);
   let eventName = template.getAttribute("name");
   let eventLore = template.getAttribute("lore");
+  let eventType = template.getAttribute("type");
 
   const eventHeader = document.querySelector('event-header');
   console.log('Event Header:', eventHeader);
@@ -40,20 +41,22 @@ function buildBuildCard(template) {
   
   console.log("HI");
 
-  html = `
-          <subevent-header class = "title" >${eventName}</subevent-header>
+
+  
+  html = `<event-body>         
           `;
 
-  html += `
-          <effect class = "title"> ${eventLore} </effect>
+  if (eventType == "choice"){
+  html += ` <subevent-header class = "title" >${eventName}</subevent-header>
+            <effect class = "title"> ${eventLore} </effect>
           `;
+          }
 
-  html += `<event-body>
-          `;
 
-  html += parseSubevent(subevent1);
 
-  html += parseSubevent(subevent2);
+  html += parseSubevent(subevent1, true);
+
+  html += parseSubevent(subevent2, false);
 
   html += `</event-body>
           `;
@@ -71,7 +74,7 @@ console.log(html);
   return eventCard;
 }
 
-function parseSubevent (el) {
+function parseSubevent (el, isTopEvent) {
   let name = el.getAttribute("name");
   let effect = el.getAttribute("effect");
   let type = el.getAttribute("type");

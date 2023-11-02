@@ -55,8 +55,10 @@
   event-body {
     display:flex;
     flex-direction: column;
-    height:400px;
-    margin-top: -30px;
+    height:410px;
+    width: 473px;
+    padding-left: 25px;
+    padding-top:10px;
   }
 
 
@@ -75,57 +77,21 @@
 
   token-event.dahan {
     background-image: url(../images/cards/Event/EventBanners/DahanBanner.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 444px;
-    height: 100px;
-    position: absolute;
-    left: 24px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center; 
-    justify-content: center; 
+
   }
   token-event.beasts {
     background-image: url(../images/cards/Event/EventBanners/BeastsBanner.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 444px;
-    height: 100px;
-    position: absolute;
-    left: 24px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center; 
-    justify-content: center; 
+
   }
 
   token-event.disease {
     background-image: url(../images/cards/Event/EventBanners/DiseaseBanner.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 444px;
-    height: 100px;
-    position: absolute;
-    left: 24px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center; 
-    justify-content: center; 
+
   }
 
   token-event.disease-strife {
     background-image: url(../images/cards/Event/EventBanners/DiseaseStrifeBanner.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 444px;
-    height: 100px;
-    position: absolute;
-    left: 24px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center; 
-    justify-content: center; 
+
   }
 
   token-event-icon{
@@ -144,7 +110,6 @@
   }
 
   token-event-icon.beasts{
-    display: block;
     background-image: url(../images/cards/Event/EventBanners/beast.png);
     width: 60px;
     height: 60px;
@@ -234,6 +199,7 @@
     height: 100%;
     min-height: 130px;
     width: 70px;
+    margin-left: -25px;
     position: relative;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     align-items: center;
@@ -263,38 +229,45 @@
     height:100%;
   }
 
+  subevent-body{
+    display: flex;
+    position: relative;
+    flex-direction: column ;
+    width: 100%;
+    height:100%;
+  }
+
   subevent-header {
     font-family: "Name Headings";
     color: #3D2919;
-    font-size: 24pt;
-    word-spacing: 0px;
+    font-size: 24pt;    word-spacing: 0px;
     white-space: pre-line;
     position: relative;
-    display: block;
+    display: flex;
     text-align: center;
-    padding-top: 10px;
-    margin-right: 26px;
+    align-content: center;
+    align-self: center;
+    padding-top: 15px;
   }
 
   subevent-header.choice {
     color: #3f2e24;
+    padding-left: 10px;
+    text-align: left;
+    align-content:start;
+    align-self: start;
+    font-size: 16pt;
+    padding-top: 10px;
   }
 
   subevent-header.title {
     color: #3f2e24;
     padding-top: 30px;
-    padding-left: 30px;
   }
 
-  subevent-header.choice {
-    font-size: 16pt;
-    padding-right: 12px;
-    text-align:left;
-  }
 
-  subevent-                                                                                                                                                                                            .choice {
-    padding-left: 30px;
-  }
+
+
 
   effect {
     font-family: "JosefinSans-Regular";
@@ -311,7 +284,7 @@
   }
 
   effect.title {
-    padding-left: 30px;
+    display: flex;
   }
 
   /* End new content */
