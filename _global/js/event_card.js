@@ -111,6 +111,10 @@ function parseTokenEvent(el, isTopEvent){
   let html = `
 
       <token-event class="${tokens}" style="bottom: ${bottomOffset};">
+      
+      <token-event-color class="${tokens}" > </token-event-color>
+
+      <token-event-texture> </token-event-texture>
 
       <token-event-icon class="${tokens}"> </token-event-icon class="${tokens}">
 

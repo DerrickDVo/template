@@ -63,6 +63,7 @@
 
 
   token-event{
+    background-image: url(../images/cards/Event/EventBanners/Banner.png);
     background-repeat: no-repeat;
     background-size: cover;
     width: 444px;
@@ -76,22 +77,52 @@
   }
 
   token-event.dahan {
-    background-image: url(../images/cards/Event/EventBanners/DahanBanner.png);
-
+    /* background-color: #decaac; */
   }
   token-event.beasts {
-    background-image: url(../images/cards/Event/EventBanners/BeastsBanner.png);
-
+    background-color: #fac9b8;
   }
 
   token-event.disease {
-    background-image: url(../images/cards/Event/EventBanners/DiseaseBanner.png);
-
+    background-color: #e0d567;
   }
 
   token-event.disease-strife {
     background-image: url(../images/cards/Event/EventBanners/DiseaseStrifeBanner.png);
+  }
 
+  token-event-color{
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 444px;
+    height: 100px;
+    position: absolute;
+  }
+
+  token-event-color.dahan{
+    background: #decaac;
+  }
+
+  token-event-color.beasts{
+    background: #fac9b8;
+  }
+
+  token-event-color.disease{
+    background:#e0d567;
+  }
+
+  token-event-color.disease-strife{
+
+  }
+
+  token-event-texture{
+    background-image: url(../images/cards/Event/EventBanners/BannerTexture.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 444px;
+    height: 100px;
+    position: absolute;
+    opacity: 10%;
   }
 
   token-event-icon{
@@ -99,24 +130,27 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
-  }
-
-  token-event-icon.dahan{
-    background-image: url( ../images/cards/Event/EventBanners/DahanToken.png);
-    width: 90px;
-    height: 90px;
-    top: 10px;
-    left: -0px;
-  }
-
-  token-event-icon.beasts{
-    background-image: url(../images/cards/Event/EventBanners/beast.png);
     width: 60px;
     height: 60px;
     top: 20px;
     left: 15px;
   }
 
+  token-event-icon.dahan{
+    background-image: url( ../images/cards/Event/EventBanners/DahanToken.png);
+    width: 90px;
+    height: 90px;
+    top: 8px;
+    left: 5px;
+  }
+
+  token-event-icon.beasts{
+    background-image: url(../images/cards/Event/EventBanners/BeastToken.png);
+  }
+
+  token-event-icon.disease{
+    background-image: url(../images/cards/Event/EventBanners/DiseaseToken.png);
+  }
 
   /* effect {
     top:12%;
