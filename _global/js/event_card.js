@@ -78,23 +78,93 @@ function parseSubevent (el, isTopEvent) {
   let name = el.getAttribute("name");
   let effect = el.getAttribute("effect");
   let type = el.getAttribute("type");
+  let bannerText = el.getAttribute("bannerText");
   let html;
-  if (type == "choice"){
-    html = `<subevent>
-    <subevent-body class="choice">
-    <subevent-header class = "choice"> ${name} </subevent-header>
-    <effect> ${effect} </effect> </subevent-body>
-    </subevent>
-    `
-  } else{
-    // Change to the line below
-    html = `<subevent>
-    <subevent-banner class="healthy"> <subevent-banner-text> Healthy Island </subevent-banner-text> </subevent-banner><subevent-body>
-    <subevent-header> ${name} </subevent-header>
-    <effect> ${effect} </effect> </subevent-body>
-    </subevent>
-    `
+
+  switch (type){
+    case "choice":
+      html = `<subevent>
+      <subevent-body class="choice">
+      <subevent-header class = "choice"> ${name} </subevent-header>
+      <effect> ${effect} </effect> </subevent-body>
+      </subevent>
+      `
+    break;
+
+    case "healthy":
+      html = `<subevent>
+      <subevent-banner class="${type}"> <subevent-banner-text> Healthy Island </subevent-banner-text> </subevent-banner><subevent-body>
+      <subevent-header> ${name} </subevent-header>
+      <effect> ${effect} </effect> </subevent-body>
+      </subevent>
+      `
+      break;
+    
+      case "blighted":
+      html = `<subevent>
+      <subevent-banner class="${type}"> <subevent-banner-text> Blighted Island </subevent-banner-text> </subevent-banner><subevent-body>
+      <subevent-header> ${name} </subevent-header>
+      <effect> ${effect} </effect> </subevent-body>
+      </subevent>
+      `
+      break;
+    
+      case "terror1":
+        html = `<subevent>
+        <subevent-banner class="${type}"> 
+        <subevent-banner-icon class="terror1"> </subevent-banner-icon>
+        </subevent-banner> 
+        
+        <subevent-body>
+        <subevent-header> ${name} </subevent-header>
+        <effect> ${effect} </effect> </subevent-body>
+        </subevent>
+        `
+      break;
+      
+      case "terror12":
+        html = `<subevent>
+        <subevent-banner class="${type}"> 
+        <subevent-banner-icon class="terror1"> </subevent-banner-icon>
+        <subevent-banner-icon class="terror12"> </subevent-banner-icon>
+
+        </subevent-banner><subevent-body>
+        <subevent-header> ${name} </subevent-header>
+        <effect> ${effect} </effect> </subevent-body>
+        </subevent>
+        `
+      break;
+      
+      case "terror23":
+        html = `<subevent>
+        <subevent-banner class="${type}"> 
+        <subevent-banner-icon class="terror23"> </subevent-banner-icon>
+        <subevent-banner-icon class="terror3"> </subevent-banner-icon>
+
+        </subevent-banner><subevent-body>
+        <subevent-header> ${name} </subevent-header>
+        <effect> ${effect} </effect> </subevent-body>
+        </subevent>
+        `
+      break;
+      
+      case "terror3":
+        html = `<subevent>
+        <subevent-banner class="${type}"> 
+        <subevent-banner-icon class="terror3"> </subevent-banner-icon>
+
+        </subevent-banner><subevent-body>
+        <subevent-header> ${name} </subevent-header>
+        <effect> ${effect} </effect> </subevent-body>
+        </subevent>
+        `
+      break;
+      
+      default:
+      break;
   }
+
+
 
 
   return html;
@@ -111,12 +181,11 @@ function parseTokenEvent(el, isTopEvent){
   let html = `
 
       <token-event class="${tokens}" style="bottom: ${bottomOffset};">
-      
-      <token-event-color class="${tokens}" > </token-event-color>
+
+      <token-event-icon class="${tokens}"> </token-event-icon class="${tokens}">
 
       <token-event-texture> </token-event-texture>
 
-      <token-event-icon class="${tokens}"> </token-event-icon class="${tokens}">
 
       <token-event-effect><span style="font-family: Name Headings; letter-spacing: 0px;">${name}</span> ${effect}</token-event-effect>
       

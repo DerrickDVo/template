@@ -63,7 +63,6 @@
 
 
   token-event{
-    background-image: url(../images/cards/Event/EventBanners/Banner.png);
     background-repeat: no-repeat;
     background-size: cover;
     width: 444px;
@@ -77,43 +76,21 @@
   }
 
   token-event.dahan {
-    /* background-color: #decaac; */
+    background: #decaac;
   }
   token-event.beasts {
-    background-color: #fac9b8;
+    background: #fac9b8
   }
 
   token-event.disease {
-    background-color: #e0d567;
+    background: #e0d567;
   }
 
   token-event.disease-strife {
-    background-image: url(../images/cards/Event/EventBanners/DiseaseStrifeBanner.png);
+    background: linear-gradient(90deg, #8EC7E1, #F6E967);
   }
 
-  token-event-color{
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 444px;
-    height: 100px;
-    position: absolute;
-  }
 
-  token-event-color.dahan{
-    background: #decaac;
-  }
-
-  token-event-color.beasts{
-    background: #fac9b8;
-  }
-
-  token-event-color.disease{
-    background:#e0d567;
-  }
-
-  token-event-color.disease-strife{
-
-  }
 
   token-event-texture{
     background-image: url(../images/cards/Event/EventBanners/BannerTexture.png);
@@ -238,21 +215,68 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     align-items: center;
     flex-direction: column;
+    justify-content: space-evenly;
   }
 
   subevent-banner.healthy{
     background-image: url(../images/cards/Event/EventBanners/HealthyBanner.png);
   }
 
+  subevent-banner.blighted{
+    background-image: url(../images/cards/Event/EventBanners/BlightedBanner.png);
+  }
+  subevent-banner.stage1{
+    background-image: url(../images/cards/Event/EventBanners/StageIBanner.png);
+  }
+  subevent-banner.stage3{
+    background-image: url(../images/cards/Event/EventBanners/StageIIIBanner.png);
+  }
+  subevent-banner.terror1{
+    background-image: url(../images/cards/Event/EventBanners/Terror1Banner.png);
+  }
+  subevent-banner.terror12{
+    background-image: url(../images/cards/Event/EventBanners/Terror1Banner.png);
+  }
+  subevent-banner.terror23{
+    background-image: url(../images/cards/Event/EventBanners/Terror23Banner.png);
+  }
+  subevent-banner.terror3{
+    background-image: url(../images/cards/Event/EventBanners/Terror3Banner.png);
+  }
+
+  subevent-banner-icon{
+    display: flex;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    width: 60px;
+    height: 60px;
+  }
+
+  subevent-banner-icon.terror1{
+    background-image: url(../images/cards/Event/EventBanners/Terror1.png);
+  }
+  subevent-banner-icon.terror12{
+    background-image: url(../images/cards/Event/EventBanners/Terror12.png);
+
+  }  
+  subevent-banner-icon.terror23{
+    background-image: url(../images/cards/Event/EventBanners/Terror23.png);
+
+  }
+  subevent-banner-icon.terror3{
+    background-image: url(../images/cards/Event/EventBanners/Terror3.png);
+
+  }
+
   subevent-banner-text{
     font-family: "Name Headings";
-    font-size: 15pt;
+    font-size: 18pt;
     position: relative;
     display: block;
     transform-origin: center;
     transform: rotate(270deg) translateX(0%);
     width: max-content;
-    top: 40%;
   }
 
   subevent{
