@@ -79,6 +79,8 @@ function parseSubevent (el, isTopEvent) {
   let effect = el.getAttribute("effect");
   let type = el.getAttribute("type");
   let bannerText = el.getAttribute("bannerText");
+  let zIndex = isTopEvent ? "10" : "0"; 
+
   let html;
 
   switch (type){
@@ -92,8 +94,8 @@ function parseSubevent (el, isTopEvent) {
     break;
 
     case "healthy":
-      html = `<subevent>
-      <subevent-banner class="${type}"> <subevent-banner-text> Healthy Island </subevent-banner-text> </subevent-banner><subevent-body>
+      html = `<subevent style = "z-index: ${zIndex}">
+      <subevent-banner class="${type}"> <subevent-banner-text> Healthy Island </subevent-banner-text> </subevent-banner> <subevent-body>
       <subevent-header> ${name} </subevent-header>
       <effect> ${effect} </effect> </subevent-body>
       </subevent>
@@ -101,8 +103,8 @@ function parseSubevent (el, isTopEvent) {
       break;
     
       case "blighted":
-      html = `<subevent>
-      <subevent-banner class="${type}"> <subevent-banner-text> Blighted Island </subevent-banner-text> </subevent-banner><subevent-body>
+        html = `<subevent style = "z-index: ${zIndex}">
+        <subevent-banner class="${type}"> <subevent-banner-text> Blighted Island </subevent-banner-text> </subevent-banner><subevent-body>
       <subevent-header> ${name} </subevent-header>
       <effect> ${effect} </effect> </subevent-body>
       </subevent>
@@ -110,7 +112,7 @@ function parseSubevent (el, isTopEvent) {
       break;
     
       case "terror1":
-        html = `<subevent>
+        html = `<subevent style = "z-index: ${zIndex}">
         <subevent-banner class="${type}"> 
         <subevent-banner-icon class="terror1"> </subevent-banner-icon>
         </subevent-banner> 
@@ -123,7 +125,7 @@ function parseSubevent (el, isTopEvent) {
       break;
       
       case "terror12":
-        html = `<subevent>
+        html = `<subevent style = "z-index: ${zIndex}">
         <subevent-banner class="${type}"> 
         <subevent-banner-icon class="terror1"> </subevent-banner-icon>
         <subevent-banner-icon class="terror12"> </subevent-banner-icon>
@@ -136,7 +138,7 @@ function parseSubevent (el, isTopEvent) {
       break;
       
       case "terror23":
-        html = `<subevent>
+        html = `<subevent style = "z-index: ${zIndex}">
         <subevent-banner class="${type}"> 
         <subevent-banner-icon class="terror23"> </subevent-banner-icon>
         <subevent-banner-icon class="terror3"> </subevent-banner-icon>
@@ -149,7 +151,7 @@ function parseSubevent (el, isTopEvent) {
       break;
       
       case "terror3":
-        html = `<subevent>
+        html = `<subevent style = "z-index: ${zIndex}">
         <subevent-banner class="${type}"> 
         <subevent-banner-icon class="terror3"> </subevent-banner-icon>
 
@@ -175,18 +177,58 @@ function parseTokenEvent(el, isTopEvent){
   let name = el.getAttribute("name");
   let effect = el.getAttribute("effect");
   let tokens = el.getAttribute("tokens");
-  console.log(tokens);
+
+  //The colors each token is associated with.
+  var colorMap = {
+    "badlands": "red",
+    "wilds": "orange",
+    "strife": "#8EC7E1",
+    "vitality": "blue",
+    "dahan": "#decaac",
+    "disease": "#e0d567",
+    "beasts": "#fac9b8",
+    "blight": "white",
+    "fear": "black",
+  };
+
+  const tokensArray = tokens.split(',');
+  
+  let background = "";
+
+  console.log(tokensArray);
+
+  if (tokensArray.length > 1){
+    background = "linear-gradient(90deg";
+    tokensArray.forEach(token => {
+      background+= "," + colorMap[token];
+
+    });
+    background += ")";
+    console.log(background);
+
+  } else {
+      background = colorMap[tokensArray[0]];
+      console.log(background);
+  }
+  
+
+
   let bottomOffset = isTopEvent ? "160px" : "40px"; 
 
   let html = `
 
-      <token-event class="${tokens}" style="bottom: ${bottomOffset};">
-
-      <token-event-icon class="${tokens}"> </token-event-icon class="${tokens}">
-
+      <token-event style="bottom: ${bottomOffset}; background: ${background}">
+      <token-event-icon-container>
+      `
+      tokensArray.forEach(token => {
+        html += `
+        <token-event-icon class="${token}"> </token-event-icon>
+        `
+      });
+      
+      html += `
+      </token-event-icon-container>
       <token-event-texture> </token-event-texture>
-
-
       <token-event-effect><span style="font-family: Name Headings; letter-spacing: 0px;">${name}</span> ${effect}</token-event-effect>
       
       </token-event class="${tokens}">
