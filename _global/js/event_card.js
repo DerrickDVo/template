@@ -173,7 +173,7 @@ function parseSubevent (el, isTopEvent) {
   
   html += `
     <subevent-body>
-    <subevent-header> ${name} </subevent-header>
+    <subevent-header class = ${type}> ${name} </subevent-header>
     <effect> ${effect} </effect> 
   `
   if (type != "choice" && isTopEvent){

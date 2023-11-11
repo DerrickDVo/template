@@ -314,7 +314,8 @@ token-event-effect {
   subevent-header {
     font-family: "Name Headings";
     color: #3D2919;
-    font-size: 24pt;    word-spacing: 0px;
+    font-size: 24pt;    
+    word-spacing: 0px;
     white-space: pre-line;
     position: relative;
     display: flex;
