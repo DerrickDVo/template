@@ -54,6 +54,7 @@
 
   event-body {
     display:flex;
+    
     flex-direction: column;
     height:410px;
     width: 473px;
@@ -61,18 +62,16 @@
     padding-top:10px;
   }
 
-
-  token-event{
-
+  token-event {
     width: 444px;
     height: 100px;
     position: absolute;
     left: 24px;
     box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.4);
     display: flex;
-    align-items: center; 
-    justify-content: center; 
-  }
+    align-items: center;
+    flex-direction: row;
+}
 
 
 
@@ -87,29 +86,35 @@
     opacity: 10%;
   }
   
-  token-event-icon-container{
+
+  token-event-icon-container {
+    min-width: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: space-evenly;
-    width: 100px;
-    height: 100%;
-  }
-  token-event-icon{
-    width: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-size: contain;
-    align-self: center;
-  }
-
+    width: 60px;
+    height: 70px;
+    align-content: center;
+    margin-left: 8px;
+    margin-right: 8px;
+    flex-wrap: wrap;
+    max-width: 60px;
+}
+token-event-icon {
+  display: inline;
+  flex-basis: 27px;
+  flex-grow: 5;
+  aspect-ratio: 1 / 1;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  max-width: 60px;
+}
   token-event-icon.dahan{
     background-image: url( ../images/cards/Event/EventBanners/DahanToken.png);
   }
 
   token-event-icon.strife{
     background-image: url( ../images/cards/Event/EventBanners/StrifeToken.png);
-
   }
 
   token-event-icon.beasts{
@@ -119,6 +124,24 @@
   token-event-icon.disease{
     background-image: url(../images/cards/Event/EventBanners/DiseaseToken.png);
   }
+
+
+  token-event-icon.wilds{
+    background-image: url(../images/cards/Event/EventBanners/WildsToken.png);
+  }
+  token-event-icon.vitality{
+    background-image: url(../images/cards/Event/EventBanners/VitalityToken.png);
+  }
+  token-event-icon.blight{
+    background-image: url(../images/cards/Event/EventBanners/BlightToken.png);
+  }
+  token-event-icon.fear{
+    background-image: url(../images/cards/Event/EventBanners/FearToken.png);
+  }
+  token-event-icon.badlands{
+    background-image: url(../images/cards/Event/EventBanners/BadlandsToken.png);
+  }
+
 
   /* effect {
     top:12%;
@@ -136,7 +159,7 @@
     margin-bottom: 5px;
   } */
 
-  token-event-effect {
+token-event-effect {
     font-family: "JosefinSans-Regular";
     font-size: 15pt;
     letter-spacing: -1px;
@@ -146,10 +169,11 @@
     display: block;
     text-align: left;
     padding-top: 10px;
-    padding-right: 40px;
+    padding-right: 30px;
     margin-bottom: 5px;
-  }
-
+    padding-left: 5px;
+    width: 374px;
+}
   /* Replacements below */
 
   /* subevent-header {
@@ -206,6 +230,7 @@
     align-items: center;
     flex-direction: column;
     justify-content: space-evenly;
+    overflow:hidden;
   }
 
   subevent-banner.healthy{
@@ -269,7 +294,8 @@
     width: max-content;
   }
 
-  subevent{
+  subevent {
+    
     display: flex;
     position: relative;
     flex-direction: row;
@@ -333,6 +359,15 @@
 
   effect.title {
     display: flex;
+  }
+
+
+  event-line{
+    border-top: 1px solid #ccc; 
+    width:90%;
+    position:absolute;
+    align-self: center;
+    bottom:0%;
   }
 
   /* End new content */

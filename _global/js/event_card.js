@@ -56,6 +56,8 @@ function buildBuildCard(template) {
 
   html += parseSubevent(subevent1, true);
 
+
+
   html += parseSubevent(subevent2, false);
 
   html += `</event-body>
@@ -85,29 +87,19 @@ function parseSubevent (el, isTopEvent) {
 
   switch (type){
     case "choice":
-      html = `<subevent>
-      <subevent-body class="choice">
-      <subevent-header class = "choice"> ${name} </subevent-header>
-      <effect> ${effect} </effect> </subevent-body>
-      </subevent>
+      html = `<subevent style = "z-index: ${zIndex}">
       `
     break;
 
     case "healthy":
       html = `<subevent style = "z-index: ${zIndex}">
-      <subevent-banner class="${type}"> <subevent-banner-text> Healthy Island </subevent-banner-text> </subevent-banner> <subevent-body>
-      <subevent-header> ${name} </subevent-header>
-      <effect> ${effect} </effect> </subevent-body>
-      </subevent>
+      <subevent-banner class="${type}"> <subevent-banner-text> Healthy Island </subevent-banner-text> </subevent-banner>
       `
       break;
     
       case "blighted":
         html = `<subevent style = "z-index: ${zIndex}">
-        <subevent-banner class="${type}"> <subevent-banner-text> Blighted Island </subevent-banner-text> </subevent-banner><subevent-body>
-      <subevent-header> ${name} </subevent-header>
-      <effect> ${effect} </effect> </subevent-body>
-      </subevent>
+        <subevent-banner class="${type}"> <subevent-banner-text> Blighted Island </subevent-banner-text> </subevent-banner>
       `
       break;
     
@@ -116,11 +108,7 @@ function parseSubevent (el, isTopEvent) {
         <subevent-banner class="${type}"> 
         <subevent-banner-icon class="terror1"> </subevent-banner-icon>
         </subevent-banner> 
-        
-        <subevent-body>
-        <subevent-header> ${name} </subevent-header>
-        <effect> ${effect} </effect> </subevent-body>
-        </subevent>
+
         `
       break;
       
@@ -130,10 +118,7 @@ function parseSubevent (el, isTopEvent) {
         <subevent-banner-icon class="terror1"> </subevent-banner-icon>
         <subevent-banner-icon class="terror12"> </subevent-banner-icon>
 
-        </subevent-banner><subevent-body>
-        <subevent-header> ${name} </subevent-header>
-        <effect> ${effect} </effect> </subevent-body>
-        </subevent>
+        </subevent-banner>
         `
       break;
       
@@ -143,10 +128,7 @@ function parseSubevent (el, isTopEvent) {
         <subevent-banner-icon class="terror23"> </subevent-banner-icon>
         <subevent-banner-icon class="terror3"> </subevent-banner-icon>
 
-        </subevent-banner><subevent-body>
-        <subevent-header> ${name} </subevent-header>
-        <effect> ${effect} </effect> </subevent-body>
-        </subevent>
+        </subevent-banner>
         `
       break;
       
@@ -155,19 +137,52 @@ function parseSubevent (el, isTopEvent) {
         <subevent-banner class="${type}"> 
         <subevent-banner-icon class="terror3"> </subevent-banner-icon>
 
-        </subevent-banner><subevent-body>
-        <subevent-header> ${name} </subevent-header>
-        <effect> ${effect} </effect> </subevent-body>
-        </subevent>
+        </subevent-banner>
         `
       break;
-      
+
+      case "stage1":
+        html = `<subevent style = "z-index: ${zIndex}">
+        <subevent-banner class="stage1"> <subevent-banner-text> STAGE I </subevent-banner-text> </subevent-banner><subevent-body>
+
+        `
+      break;
+
+      case "stage12":
+        html = `<subevent style = "z-index: ${zIndex}">
+        <subevent-banner class="stage1"> <subevent-banner-text> STAGES I+II </subevent-banner-text> </subevent-banner><subevent-body>
+
+        `
+      break;
+
+      case "stage23":
+        html = `<subevent style = "z-index: ${zIndex}">
+        <subevent-banner class="stage3"> <subevent-banner-text> STAGES II+III </subevent-banner-text> </subevent-banner><subevent-body>
+        `
+      break;
+
+      case "stage3":
+        html = `<subevent style = "z-index: ${zIndex}">
+        <subevent-banner class="stage3"> <subevent-banner-text> STAGE III </subevent-banner-text> </subevent-banner><subevent-body>
+        `
+      break;
       default:
       break;
   }
 
-
-
+  
+  html += `
+    <subevent-body>
+    <subevent-header> ${name} </subevent-header>
+    <effect> ${effect} </effect> 
+  `
+  if (type != "choice" && isTopEvent){
+    html+=`<event-line> </event-line>`
+  }
+  html += `
+  </subevent-body>
+  </subevent>
+  `
 
   return html;
 }
@@ -180,15 +195,15 @@ function parseTokenEvent(el, isTopEvent){
 
   //The colors each token is associated with.
   var colorMap = {
-    "badlands": "red",
-    "wilds": "orange",
+    "badlands": "#FFB82B",
+    "wilds": "#BAE58B",
     "strife": "#8EC7E1",
-    "vitality": "blue",
+    "vitality": "#A0CF45",
     "dahan": "#decaac",
     "disease": "#e0d567",
     "beasts": "#fac9b8",
-    "blight": "white",
-    "fear": "black",
+    "blight": "#CDD4D1",
+    "fear": "#E0C7FF",
   };
 
   const tokensArray = tokens.split(',');
