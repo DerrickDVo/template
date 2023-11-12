@@ -37,6 +37,7 @@
     position: absolute;
     top: 0px;
     left: 0px;
+    overflow:hidden;
   }
 
   event-card-overlay {
@@ -50,6 +51,7 @@
     position: absolute;
     top: 0px;
     left: 0px;
+    z-index: 100;
   }
 
   event-body {

@@ -27,19 +27,11 @@ function buildBuildCard(template) {
   let eventName = template.getAttribute("name");
   let eventLore = template.getAttribute("lore");
   let eventType = template.getAttribute("type");
-
+  const subEvents = document.querySelectorAll('subevent');
+  const tokenEvents = document.querySelectorAll('token-event');
   const eventHeader = document.querySelector('event-header');
   console.log('Event Header:', eventHeader);
 
-  const subevent1 = document.querySelector('subevent-1');
-
-  const subevent2 = document.querySelector('subevent-2');
-
-  const tokenEvent1 = document.querySelector('token-event-1');
-
-  const tokenEvent2 = document.querySelector('token-event-2');
-  
-  console.log("HI");
 
 
   
@@ -51,21 +43,21 @@ function buildBuildCard(template) {
             <effect class = "title"> ${eventLore} </effect>
           `;
           }
-
-
-
-  html += parseSubevent(subevent1, true);
-
-
-
-  html += parseSubevent(subevent2, false);
+  
+  let eventNumber = subEvents.length;
+  subEvents.forEach(subEvent => {
+      html += parseSubevent(subEvent, eventNumber);
+      eventNumber--;
+    });
 
   html += `</event-body>
           `;
 
-  html+= parseTokenEvent(tokenEvent1, true);
-
-  html+= parseTokenEvent(tokenEvent2, false);
+  let bottomOffset = 40 + 120 * (tokenEvents.length - 1);
+  tokenEvents.forEach(tokenEvent => {
+    html += parseTokenEvent(tokenEvent, bottomOffset);
+    bottomOffset-=120;
+  });
 
   html+= `
           <event-card-overlay> </event-card-overlay>
@@ -76,94 +68,92 @@ console.log(html);
   return eventCard;
 }
 
-function parseSubevent (el, isTopEvent) {
+function parseSubevent (el, eventNumber) {
   let name = el.getAttribute("name");
   let effect = el.getAttribute("effect");
   let type = el.getAttribute("type");
   let bannerText = el.getAttribute("bannerText");
-  let zIndex = isTopEvent ? "10" : "0"; 
 
-  let html;
+
+  let html = `<subevent style = "z-index: ${eventNumber}">`;
 
   switch (type){
     case "choice":
-      html = `<subevent style = "z-index: ${zIndex}">
-      `
     break;
 
     case "healthy":
-      html = `<subevent style = "z-index: ${zIndex}">
+      html += `
       <subevent-banner class="${type}"> <subevent-banner-text> Healthy Island </subevent-banner-text> </subevent-banner>
       `
       break;
     
       case "blighted":
-        html = `<subevent style = "z-index: ${zIndex}">
+        html += `
         <subevent-banner class="${type}"> <subevent-banner-text> Blighted Island </subevent-banner-text> </subevent-banner>
       `
       break;
     
       case "terror1":
-        html = `<subevent style = "z-index: ${zIndex}">
+        html += `
         <subevent-banner class="${type}"> 
         <subevent-banner-icon class="terror1"> </subevent-banner-icon>
         </subevent-banner> 
-
         `
       break;
       
       case "terror12":
-        html = `<subevent style = "z-index: ${zIndex}">
+        html += `
         <subevent-banner class="${type}"> 
         <subevent-banner-icon class="terror1"> </subevent-banner-icon>
         <subevent-banner-icon class="terror12"> </subevent-banner-icon>
-
         </subevent-banner>
         `
       break;
       
       case "terror23":
-        html = `<subevent style = "z-index: ${zIndex}">
+        html += `
         <subevent-banner class="${type}"> 
         <subevent-banner-icon class="terror23"> </subevent-banner-icon>
         <subevent-banner-icon class="terror3"> </subevent-banner-icon>
-
         </subevent-banner>
         `
       break;
       
       case "terror3":
-        html = `<subevent style = "z-index: ${zIndex}">
+        html += `
         <subevent-banner class="${type}"> 
         <subevent-banner-icon class="terror3"> </subevent-banner-icon>
-
         </subevent-banner>
         `
       break;
 
       case "stage1":
-        html = `<subevent style = "z-index: ${zIndex}">
-        <subevent-banner class="stage1"> <subevent-banner-text> STAGE I </subevent-banner-text> </subevent-banner><subevent-body>
-
+        html += `
+        <subevent-banner class="stage1"> <subevent-banner-text> STAGE I </subevent-banner-text> </subevent-banner>
         `
       break;
 
       case "stage12":
-        html = `<subevent style = "z-index: ${zIndex}">
-        <subevent-banner class="stage1"> <subevent-banner-text> STAGES I+II </subevent-banner-text> </subevent-banner><subevent-body>
+        html += `
+        <subevent-banner class="stage1"> <subevent-banner-text> STAGES I+II </subevent-banner-text> </subevent-banner>
 
         `
       break;
 
       case "stage23":
-        html = `<subevent style = "z-index: ${zIndex}">
-        <subevent-banner class="stage3"> <subevent-banner-text> STAGES II+III </subevent-banner-text> </subevent-banner><subevent-body>
+        html += `
+        <subevent-banner class="stage3"> <subevent-banner-text> STAGES II+III </subevent-banner-text> </subevent-banner>
         `
       break;
 
       case "stage3":
-        html = `<subevent style = "z-index: ${zIndex}">
-        <subevent-banner class="stage3"> <subevent-banner-text> STAGE III </subevent-banner-text> </subevent-banner><subevent-body>
+        html += `
+        <subevent-banner class="stage3"> <subevent-banner-text> STAGE III </subevent-banner-text> </subevent-banner>
+        `
+      break;
+      case "custom":
+        html += `
+        <subevent-banner class="${type}"> <subevent-banner-text> ${bannerText} </subevent-banner-text> </subevent-banner>
         `
       break;
       default:
@@ -176,7 +166,7 @@ function parseSubevent (el, isTopEvent) {
     <subevent-header class = ${type}> ${name} </subevent-header>
     <effect> ${effect} </effect> 
   `
-  if (type != "choice" && isTopEvent){
+  if (type != "choice" && eventNumber !=1){
     html+=`<event-line> </event-line>`
   }
   html += `
@@ -188,7 +178,7 @@ function parseSubevent (el, isTopEvent) {
 }
 
 
-function parseTokenEvent(el, isTopEvent){
+function parseTokenEvent(el, bottomOffset){
   let name = el.getAttribute("name");
   let effect = el.getAttribute("effect");
   let tokens = el.getAttribute("tokens");
@@ -228,11 +218,10 @@ function parseTokenEvent(el, isTopEvent){
   
 
 
-  let bottomOffset = isTopEvent ? "160px" : "40px"; 
 
   let html = `
 
-      <token-event style="bottom: ${bottomOffset}; background: ${background}">
+      <token-event style="bottom: ${bottomOffset}px; background: ${background}">
       <token-event-icon-container>
       `
       tokensArray.forEach(token => {
