@@ -27,28 +27,65 @@ function buildBuildCard(template) {
   let eventName = template.getAttribute("name");
   let eventLore = template.getAttribute("lore");
   let eventType = template.getAttribute("type");
+  let eventSubtype = template.getAttribute("subtype")
   const subEvents = document.querySelectorAll('subevent');
+  
   const tokenEvents = document.querySelectorAll('token-event');
-  const eventHeader = document.querySelector('event-header');
-  console.log('Event Header:', eventHeader);
 
-
+  // const eventHeader = document.querySelector('event-header');
 
   
   html = `<event-body>         
           `;
 
-  if (eventType == "choice"){
-  html += ` <subevent-header class = "title" >${eventName}</subevent-header>
-            <effect class = "title"> ${eventLore} </effect>
-          `;
-          }
+  if (!(eventName == "" || eventName == "none")){
+    html += ` <subevent-header class = "title" >${eventName}</subevent-header>
+    `;
+    }
+
+  if (!(eventLore == "" || eventLore == "none")){
+    html += `<effect class = "title"> ${eventLore} </effect>
+    `;
+  }
   
   let eventNumber = subEvents.length;
-  subEvents.forEach(subEvent => {
-      html += parseSubevent(subEvent, eventNumber);
+
+  if (eventNumber == 2){
+    if (eventType == "blight"){
+      html+= parseSubevent(subEvents[0], 2, "healthy");
+      html+= parseSubevent(subEvents[1], 1, "blighted");
+    }
+    if (eventType == "terror"){
+      if (eventSubtype == "terror12"){
+        html+= parseSubevent(subEvents[0], 2, "terror12");
+        html+= parseSubevent(subEvents[1], 1, "terror3");
+      } else{
+        html+= parseSubevent(subEvents[0], 2, "terror1");
+        html+= parseSubevent(subEvents[1], 1, "terror23");
+      }
+
+    }
+    if (eventType == "stage"){
+      if (eventSubtype == "stage12"){
+        html+= parseSubevent(subEvents[0], 2, "stage12");
+        html+= parseSubevent(subEvents[1], 1, "stage3");
+      } else{
+        html+= parseSubevent(subEvents[0], 2, "stage1");
+        html+= parseSubevent(subEvents[1], 1, "stage12");
+      }
+    }
+    if (!(eventType == "stage" || eventType == "blight" || eventType == "terror")) {
+      //default to choiche
+      html+= parseSubevent(subEvents[0], 2, "choice");
+      html+= parseSubevent(subEvents[1], 1, "choice");
+    }
+  } else{
+    subEvents.forEach(subEvent => {
+      html += parseCustomSubevent(subEvent, eventNumber);
       eventNumber--;
     });
+
+  }
 
   html += `</event-body>
           `;
@@ -68,34 +105,43 @@ console.log(html);
   return eventCard;
 }
 
-function parseSubevent (el, eventNumber) {
+function parseCustomSubevent(el, eventNumber){
+  let bannerType = el.getAttribute("type");
+
+  return parseSubevent(el , eventNumber , bannerType);
+}
+
+function parseSubevent (el, eventNumber,bannerType) {
   let name = el.getAttribute("name");
   let effect = el.getAttribute("effect");
-  let type = el.getAttribute("type");
   let bannerText = el.getAttribute("bannerText");
 
 
   let html = `<subevent style = "z-index: ${eventNumber}">`;
 
-  switch (type){
+  if (bannerType  != "none"){
+    
+  }
+
+  switch (bannerType){
     case "choice":
     break;
 
     case "healthy":
       html += `
-      <subevent-banner class="${type}"> <subevent-banner-text> Healthy Island </subevent-banner-text> </subevent-banner>
+      <subevent-banner class="${bannerType}"> <subevent-banner-text> Healthy Island </subevent-banner-text> </subevent-banner>
       `
       break;
     
       case "blighted":
         html += `
-        <subevent-banner class="${type}"> <subevent-banner-text> Blighted Island </subevent-banner-text> </subevent-banner>
+        <subevent-banner class="${bannerType}"> <subevent-banner-text> Blighted Island </subevent-banner-text> </subevent-banner>
       `
       break;
     
       case "terror1":
         html += `
-        <subevent-banner class="${type}"> 
+        <subevent-banner class="${bannerType}"> 
         <subevent-banner-icon class="terror1"> </subevent-banner-icon>
         </subevent-banner> 
         `
@@ -103,7 +149,7 @@ function parseSubevent (el, eventNumber) {
       
       case "terror12":
         html += `
-        <subevent-banner class="${type}"> 
+        <subevent-banner class="${bannerType}"> 
         <subevent-banner-icon class="terror1"> </subevent-banner-icon>
         <subevent-banner-icon class="terror12"> </subevent-banner-icon>
         </subevent-banner>
@@ -112,7 +158,7 @@ function parseSubevent (el, eventNumber) {
       
       case "terror23":
         html += `
-        <subevent-banner class="${type}"> 
+        <subevent-banner class="${bannerType}"> 
         <subevent-banner-icon class="terror23"> </subevent-banner-icon>
         <subevent-banner-icon class="terror3"> </subevent-banner-icon>
         </subevent-banner>
@@ -121,7 +167,7 @@ function parseSubevent (el, eventNumber) {
       
       case "terror3":
         html += `
-        <subevent-banner class="${type}"> 
+        <subevent-banner class="${bannerType}"> 
         <subevent-banner-icon class="terror3"> </subevent-banner-icon>
         </subevent-banner>
         `
@@ -153,7 +199,7 @@ function parseSubevent (el, eventNumber) {
       break;
       case "custom":
         html += `
-        <subevent-banner class="${type}"> <subevent-banner-text> ${bannerText} </subevent-banner-text> </subevent-banner>
+        <subevent-banner class="${bannerType}"> <subevent-banner-text> ${bannerText} </subevent-banner-text> </subevent-banner>
         `
       break;
       default:
@@ -163,10 +209,10 @@ function parseSubevent (el, eventNumber) {
   
   html += `
     <subevent-body>
-    <subevent-header class = ${type}> ${name} </subevent-header>
+    <subevent-header class = ${bannerType}> ${name} </subevent-header>
     <effect> ${effect} </effect> 
   `
-  if (type != "choice" && eventNumber !=1){
+  if (bannerType != "choice" && eventNumber !=1){
     html+=`<event-line> </event-line>`
   }
   html += `
@@ -224,7 +270,7 @@ function parseTokenEvent(el, bottomOffset){
       <token-event style="bottom: ${bottomOffset}px; background: ${background}">
       <token-event-icon-container>
       `
-      tokensArray.forEach(token => {
+      tokensArray.slice().reverse().forEach(token => {
         html += `
         <token-event-icon class="${token}"> </token-event-icon>
         `
